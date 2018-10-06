@@ -1,0 +1,10 @@
+<h1>routing.component</h1>
+<button (click)="two()">two</button>
+<button (click)="three()">three</button>
+<hr>
+<a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">One</a> | 
+<a [routerLink]="['/two']" routerLinkActive="active">Two</a> | 
+<a [routerLink]="['/three']" [queryParams]="{'lorem': 'ipsum'}" [fragment]="'dolor'" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: false}">Three</a> | 
+<a [routerLink]="['/four']" routerLinkActive="active">Four</a> | 
+<hr>
+<router-outlet></router-outlet>

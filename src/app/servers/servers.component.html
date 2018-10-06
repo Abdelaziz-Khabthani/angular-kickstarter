@@ -1,0 +1,17 @@
+<h1>servers.component</h1>
+
+<input type="text" (input)="onInputChange($event)" [value]="value">
+
+{{ value }}
+
+<input type="text" [(ngModel)]="value">
+
+<button class="btn btn-primary" [disabled]="!allowAddingServers" (click)="onButtonClick()">Add Server</button>
+
+<h2 *ngIf="serverCreated; else noServer">{{ message }}</h2>
+
+<ng-template #noServer>
+    <h2>No Server created</h2>
+</ng-template>
+
+<app-server *ngFor="let server of servers; let i = index" [element]="server" [index]="i"></app-server>

@@ -1,0 +1,10 @@
+{{ asyncValue | async }} <!-- To Handle promises in view -->
+
+{{ text | uppercase | shorten:5 }}
+<br>
+{{ date | date:'fullDate' | uppercase }}
+<br>
+<input type="text" name="filter" [(ngModel)]="filterText">
+<ul>
+  <li *ngFor="let obj of objs | filter:filterText">{{ obj.label }}: {{ obj.value }}</li>
+</ul>

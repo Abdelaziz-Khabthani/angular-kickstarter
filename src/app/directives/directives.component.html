@@ -1,0 +1,18 @@
+<p *appUnless="false" highlight [color1]="'yellow'" [color2]="'pink'" [color3]="'black'">Highlight me</p>
+<!-- the same as <ng-template [appUnless]="false"></ng-template> -->
+
+<button (click)="odd = !odd">{{ odd ? 'even' : 'odd' }}</button>
+
+<ul *ngIf="odd">
+  <li *ngFor="let i of odds" [ngClass]="{odd: i % 2 !== 0}" [ngStyle]="{backgroundColor: i % 2 !== 0 ? 'darkblue' : 'transparent'}">{{ i }}</li>
+</ul>
+
+<ul *ngIf="!odd">
+  <li *ngFor="let i of evens" [ngClass]="{odd: i % 2 !== 0}" [ngStyle]="{backgroundColor: i % 2 !== 0 ? 'darkblue' : 'transparent'}">{{ i }}</li>
+</ul>
+
+<div [ngSwitch]="value">
+  <span *ngSwitchCase="1">1</span>
+  <span *ngSwitchCase="2">3</span>
+  <span *ngSwitchDefault>def</span>
+</div>

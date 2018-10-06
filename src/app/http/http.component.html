@@ -1,0 +1,10 @@
+{{ name | async }}
+
+<input type="text" #new>
+<button (click)="addObj(new.value)">Add</button>
+<button (click)="post()">Save</button>
+<button (click)="get()">Get</button>
+<button (click)="put()">Put</button>
+<ul>
+  <li *ngFor="let obj of objs"><b>{{ obj.label }}</b>: {{ obj.value }}</li>
+</ul>
